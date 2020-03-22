@@ -1,0 +1,25 @@
+# Restart bspwm & sxhkd
+super + shift + r
+	bspc wm -r && pkill -USR1 -x sxhkd
+
+# Close current window
+super + shift + q
+	bspc node -c
+
+# Change current window state
+super + {t,shift + t,f,shift + f}
+	bspc node -t {tiled,pseudo_tiled,fullscreen,floating}
+
+# Focus or send a window to desktop X
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} ^{1-9,0}
+
+# Spawn a new terminal
+super + Return
+	$TERMINAL
+
+# Show a menu with applications to launch
+super + d
+	rofi -show drun
+
+

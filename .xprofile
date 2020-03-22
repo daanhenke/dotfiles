@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Kill any already running apps
+pgrep 'sxhkd|compton' | xargs -n1 kill $1
+
+# Start our hotkey manager
+sxhkd &
+
+# Sync our X resources file
+xrdb -merge ~/.config/Xresources
+
+# Start our compositor so we can get that sweet transparancy
+compton --config ~/.config/compton/config &
+
+# Set our desktop wallpaper
+feh --bg-scale ~/pictures/wallpapers/current
