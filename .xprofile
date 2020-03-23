@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Kill any already running apps
-pgrep 'sxhkd|compton' | xargs -n1 kill $1
+pgrep 'sxhkd|compton|mopidy|polybar' | xargs -n1 kill $1 2>/dev/null
 
 # Start our hotkey manager
 sxhkd &
@@ -14,3 +14,9 @@ compton --config ~/.config/compton/config &
 
 # Set our desktop wallpaper
 feh --bg-scale ~/pictures/wallpapers/current
+
+# Start our bar
+polybar --config=$HOME/.config/polybar/bars.ini main &
+
+# Start our mpd server
+mopidy &
