@@ -1,1 +1,7 @@
 URxvt.font: xft:Fira Code:size=10
+URxvt.scrollBar: false
+URxvt.perl-ext-common: default,clipboard,config-reload
+URxvt.internalBorder: 24
+
+*.foreground: #c5c8c6
+*.background: #1d1f21
