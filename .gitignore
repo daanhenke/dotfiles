@@ -12,6 +12,7 @@
 
 !/.config/zsh
 !/.config/zsh/*
+/.config/zsh/.zcompdump
 
 !/.config/sxhkd
 !/.config/sxhkd/*
@@ -36,3 +37,4 @@
 !/.urxvt
 !/.urxvt/*
 !/.urxvt/ext/*
+
