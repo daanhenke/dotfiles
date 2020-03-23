@@ -20,6 +20,6 @@ super + Return
 
 # Show a menu with applications to launch
 super + d
-	rofi -show drun
+	~/.local/bin/scripts/rofi/launcher.sh
 
 
