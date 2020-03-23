@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Force reload X database
+pkill -HUP -f urxvt &
+
+# Get currently active window
+CURACTIVE=`xdotool getactivewindow`
+
+# Loop over active urxvt instances and focus them to force a redraw
+URXVTWINS=`xdotool search --onlyvisible --name "urxvt"`
+for WINID in $URXVTWINS
+do
+	xdotool windowfocus "$WINID"
+done
+
+# Restore focus to previously active window
+xdotool windowfocus "$CURACTIVE"
